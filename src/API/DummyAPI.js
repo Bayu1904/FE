@@ -7,26 +7,26 @@ import Boba4 from "../assets/Rectangle 4boba2.png";
 export let DataBoba = [
   {
     id: 1,
-    title: "Boba Milk tea",
+    title: "Ice Coffe Palm Sugar",
     image: Boba1,
-    price: 25000,
+    price: 27000,
   },
   {
     id: 2,
-    title: "Boba Cheese",
+    title: "Ice Coffe Green Tea",
     image: Boba2,
-    price: 20000,
+    price: 31000,
   },
   {
     id: 3,
-    title: "Boba Blue",
+    title: "Hanami Latte",
     image: Boba3,
-    price: 20000,
+    price: 29000,
   },
   {
     id: 4,
-    title: "boba Coffe",
+    title: "Clepon Coffe",
     image: Boba4,
-    price: 22000,
+    price: 28000,
   },
 ];
