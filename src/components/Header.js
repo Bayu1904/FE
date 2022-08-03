@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import LogoBrand from "../assets/logo-brand.png";
@@ -20,6 +20,17 @@ function Header() {
   const handleShow = () => setShow(true);
   const regClose = () => setReg(false);
   const regShow = () => setReg(true);
+  useEffect(() => {
+    if (reg) {
+      handleClose();
+    }
+  }, [reg]);
+  useEffect(() => {
+    if (show) {
+      regClose();
+    }
+  }, [show]);
+
   return (
     <Navbar expand="lg">
       <Container>
@@ -53,7 +64,12 @@ function Header() {
               <InputText type="password" placeholder="Password" />
             </Modal.Body>
             <ButtonSubmit type="submit" text="LOGIN" />
-            <p className="text-center mt-3">Dont have an Account? click here</p>
+            <p className="text-center mt-3">
+              Dont have an Account? click
+              <a className="link " onClick={regShow}>
+                here
+              </a>
+            </p>
           </Modal>
 
           <Modal className="p-4" show={reg} onHide={regClose}>
@@ -67,7 +83,10 @@ function Header() {
             </Modal.Body>
             <ButtonSubmit type="submit" text="REGISTER" />
             <p className="text-center mt-3">
-              Already have an account ? Click Here
+              Already have an account ? Click{" "}
+              <a className="link " onClick={handleShow}>
+                here
+              </a>
             </p>
           </Modal>
         </Form>

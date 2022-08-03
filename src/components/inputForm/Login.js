@@ -26,25 +26,33 @@ function Login() {
         <h1 className="m-3 mb-0" style={{ color: "#BD0707" }}>
           Login
         </h1>
-        <Modal.Body>
-          <InputText type="email" placeholder="Email" />
-          <InputText type="password" placeholder="Password" />
-        </Modal.Body>
-        <ButtonSubmit type="submit" text="LOGIN" />
-        <p className="text-center mt-3">Dont have an Account? click here</p>
+        <form action="">
+          <Modal.Body>
+            <InputText type="email" placeholder="Email" name="email" />
+            <InputText type="password" placeholder="Password" name="password" />
+          </Modal.Body>
+          <ButtonSubmit type="submit" text="LOGIN" />
+        </form>
+        <p className="text-center mt-3">
+          Dont have an Account? click <ButtonSubmit text="here" type="button" />
+        </p>
       </Modal>
 
       <Modal className="p-4" show={reg} onHide={regClose}>
         <h1 className="m-3 mb-0" style={{ color: "#BD0707" }}>
           Register
         </h1>
-        <Modal.Body>
-          <InputText type="text" placeholder="Full Name" />
-          <InputText type="email" placeholder="Email" />
-          <InputText type="password" placeholder="Password" />
-        </Modal.Body>
-        <ButtonSubmit type="submit" text="REGISTER" />
-        <p className="text-center mt-3">Already have an account ? Click Here</p>
+        <form>
+          <Modal.Body>
+            <InputText type="text" placeholder="Full Name" name="fullName" />
+            <InputText type="email" placeholder="Email" name="email" />
+            <InputText type="password" placeholder="Password" name="password" />
+          </Modal.Body>
+          <ButtonSubmit type="submit" text="REGISTER" />
+        </form>
+        <div className="text-center mt-3">
+          Already have an account ? Click Here
+        </div>
       </Modal>
     </>
   );
