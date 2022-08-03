@@ -15,7 +15,7 @@ export default function ListCard() {
       <Row>
         {DataBoba.map((items, index) => (
           <Col className="mt-4">
-            <Link to={`/detail-project/${index}`}>
+            <Link to={`/detail-project/${index}`} className="text-decoration-none" >
               <Card key={index} style={{ width: "15.063rem", border: 0, borderRadius: 10, backgroundColor: "#F6DADA" }}
               >
                 <Card.Img variant="top" src={items.image} className="rounded" style={{ height: "19.5rem" }} />
