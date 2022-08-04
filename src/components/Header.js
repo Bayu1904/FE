@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LogoBrand from "../assets/logo-brand.png";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 // import Nav from 'react-bootstrap/Nav';
 import Navbar from "react-bootstrap/Navbar";
 import Modal from "react-bootstrap/Modal";
@@ -34,7 +33,7 @@ function Header() {
   return (
     <Navbar expand="lg">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img
             src={LogoBrand}
             width="50"
@@ -44,7 +43,7 @@ function Header() {
           />
         </Navbar.Brand>
 
-        <Form className="d-flex">
+        <div className="d-flex">
           <Button
             variant="outline-danger"
             className="px-4"
@@ -59,16 +58,27 @@ function Header() {
             <h1 className="m-3 mb-0" style={{ color: "#BD0707" }}>
               Login
             </h1>
-            <Modal.Body>
-              <InputText type="email" placeholder="Email" />
-              <InputText type="password" placeholder="Password" />
-            </Modal.Body>
-            <ButtonSubmit type="submit" text="LOGIN" />
+            <form action="">
+              <Modal.Body>
+                <InputText type="email" placeholder="Email" />
+                <InputText type="password" placeholder="Password" />
+              </Modal.Body>
+              <ButtonSubmit type="submit" text="LOGIN" />
+            </form>
             <p className="text-center mt-3">
-              Dont have an Account? click
-              <a className="link " onClick={regShow}>
+              Dont have an Account? click{" "}
+              <button
+                className="link"
+                style={{
+                  cursor: "pointer",
+                  border: "none",
+                  backgroundColor: "white",
+                  padding: 0,
+                }}
+                onClick={regShow}
+              >
                 here
-              </a>
+              </button>
             </p>
           </Modal>
 
@@ -76,20 +86,31 @@ function Header() {
             <h1 className="m-3 mb-0" style={{ color: "#BD0707" }}>
               Register
             </h1>
-            <Modal.Body>
-              <InputText type="text" placeholder="Full Name" />
-              <InputText type="email" placeholder="Email" />
-              <InputText type="password" placeholder="Password" />
-            </Modal.Body>
-            <ButtonSubmit type="submit" text="REGISTER" />
-            <p className="text-center mt-3">
+            <form action="">
+              <Modal.Body>
+                <InputText type="text" placeholder="Full Name" />
+                <InputText type="email" placeholder="Email" />
+                <InputText type="password" placeholder="Password" />
+              </Modal.Body>
+              <ButtonSubmit type="submit" text="REGISTER" />
+            </form>
+            <div className="text-center my-3">
               Already have an account ? Click{" "}
-              <a className="link " onClick={handleShow}>
+              <button
+                className="link"
+                style={{
+                  cursor: "pointer",
+                  border: "none",
+                  backgroundColor: "white",
+                  padding: 0,
+                }}
+                onClick={handleShow}
+              >
                 here
-              </a>
-            </p>
+              </button>
+            </div>
           </Modal>
-        </Form>
+        </div>
       </Container>
     </Navbar>
   );
