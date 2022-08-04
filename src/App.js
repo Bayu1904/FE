@@ -6,14 +6,14 @@ import OrderPages from "./pages/orderPages";
 import LandingPage from "./pages/Landingpages";
 import Login from "./components/inputForm/Login";
 
-function App(props) {
+function App() {
   return (
     <div>
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/orderPages" element={<OrderPages />} />
+          <Route path="/product-detail/:id" element={<OrderPages />} />
         </Routes>
       </Router>
     </div>

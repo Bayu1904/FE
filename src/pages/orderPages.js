@@ -1,12 +1,18 @@
 import React from 'react'
-import topingJSON from '../API/Topping-List.json'
 
-import Topping from '../components/inputForm/Topping'
+import DetailProduct from '../components/detailProduct'
+import Header from '../components/Header'
+import Product from '../API/ListMenu.json'
+import { useParams } from 'react-router-dom'
 
-export default function orderPages() {
+export default function OrderPages() {
+    const { id } = useParams()
+
     return (
         <>
-            <Topping data={topingJSON.ListToping} />
+            <Header />
+            <DetailProduct data={Product.listMenu} id={id} />
+
         </>
     )
 }

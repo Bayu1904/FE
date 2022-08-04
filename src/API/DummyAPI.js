@@ -6,7 +6,7 @@ import Boba4 from "../assets/Rectangle 4boba2.png";
 
 export let DataBoba = [
   {
-    id: 1,
+    id: 4451,
     title: "Ice Coffe Palm Sugar",
     image: Boba1,
     price: 27000,
