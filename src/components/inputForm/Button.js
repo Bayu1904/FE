@@ -5,7 +5,7 @@ export default function ButtonSubmit(props) {
   return (
     <div className="pt-4">
       <div className="text-center">
-        <Button variant="danger" className="w-75" type="submit">
+        <Button variant="danger" className="w-75 py-1" type="submit">
           {props.text}
         </Button>
       </div>
