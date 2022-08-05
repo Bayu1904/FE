@@ -20,7 +20,7 @@ import ButtonSubmit from "./inputForm/Button";
 function Header() {
   let profilPict = <img src={Foto} alt="122" />;
   let isLogin = true;
-  let isAdmin = false;
+  // let isAdmin = false;
   const [show, setShow] = useState(false);
   const [reg, setReg] = useState(false);
 
@@ -56,7 +56,7 @@ function Header() {
           {isLogin ? (
             <>
               <Nav className="me-auto">
-                <Nav.Link href="/">
+                <Nav.Link href="/Cart">
                   <img src={Cart} alt="Logo" className="mt-3 me-2" />
                 </Nav.Link>
 

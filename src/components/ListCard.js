@@ -5,18 +5,18 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { DataBoba } from "../API/DummyAPI";
 import formatPrice from "../utils/formatPrice";
 
-export default function ListCard(props) {
+export default function ListCard() {
   return (
     <Container className="my-5">
       <h1 className="mt-5">Lets Order </h1>
       <Row>
-        {props.boba.map((items, index) => (
+        {DataBoba.map((items, index) => (
           <Col className="mt-4">
             <Link to={`/Detail/${index}`} className="text-decoration-none">
               <Card
-                key={index}
                 style={{
                   width: "15.063rem",
                   border: 0,
@@ -40,10 +40,9 @@ export default function ListCard(props) {
                   <p style={{ color: "#974A4A", margin: 0 }}>
                     {formatPrice(items.price)}
                   </p>
-
                 </Card.Body>
-              </Link>
-            </Card>
+              </Card>
+            </Link>
           </Col>
         ))}
       </Row>
