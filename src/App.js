@@ -3,15 +3,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { DataBoba } from "./API/DummyAPI";
 
-// pages
-// import List from "./components/List";
+import OrderPages from "./pages/orderPages";
 import LandingPage from "./pages/Landingpages";
 import Login from "./components/inputForm/Login";
+
 import AddProduct from "./pages/addProduct/AddProduct";
 import AddTopping from "./pages/addProduct/AddTopping";
 import Profile from "./pages/Profile";
 import Detail from "./pages/Detail";
 import Income from "./components/Income";
+import Cart from "./pages/Cart";
+
 
 function App() {
   return (
