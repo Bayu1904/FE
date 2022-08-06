@@ -14,12 +14,10 @@ export default function detailProducts(props) {
                 ...item,
             }
     })
-    console.log("dataFIlter ", dataFilter);
     return (
         <Container className="d-flex my-5">
             <div className="col" style={{ height: "34.688rem" }}>
-                <img src={dataFilter.imgUrl} alt="image" style={{ height: "100%" }} />
-
+                <img src={dataFilter.imgUrl} alt="color-image" style={{ height: "100%" }} />
             </div>
             <div className="col-7">
                 <h1 style={{ color: "#BD0707", fontWeight: 900 }}>{dataFilter.name}</h1>

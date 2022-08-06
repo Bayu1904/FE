@@ -8,6 +8,7 @@ export default function InputText(props) {
         type={props.type}
         placeholder={props.placeholder}
         name={props.name}
+        id={props.id}
       />
     </div>
   );
