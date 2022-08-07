@@ -23,7 +23,7 @@ export default function Detail(props) {
             <h4 style={{ color: "#974A4A" }}>
               {formatPrice(props.data[id].price)}
             </h4>
-            <ListTopping ProductPrice={formatPrice(props.data[id].price)} />
+            <ListTopping ProductPrice={props.data[id].price} />
           </Col>
         </Row>
       </Container>

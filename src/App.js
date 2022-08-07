@@ -11,21 +11,27 @@ import Profile from "./pages/Profile";
 import Detail from "./pages/Detail";
 import Income from "./components/Income";
 import AdminRoute from "./utils/AdminRoute";
-import { UserContext } from "./utils/CreateContext"
+import { UserContext } from "./utils/CreateContext";
+import Cart from "./pages/Cart";
 
 function App() {
-
-  const [state] = useContext(UserContext)
-  let isLogin = state.isLogin
-  let isAdmin = state.isAdmin
+  const [state] = useContext(UserContext);
+  let isLogin = state.isLogin;
+  let isAdmin = state.isAdmin;
 
   return (
     <div>
       <Router>
         <Routes>
-          <Route path="/" element={(isAdmin ? (<Income />) : (isLogin ? <LandingPage /> : <LandingPage />))} />
+          <Route
+            path="/"
+            element={
+              isAdmin ? <Income /> : isLogin ? <LandingPage /> : <LandingPage />
+            }
+          />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Detail/:id" element={<Detail data={DataBoba} />} />
+          <Route path="/Cart" element={<Cart />} />
           <Route path="/" element={<AdminRoute />}>
             <Route path="/AddProduct" element={<AddProduct />} />
             <Route path="/AddTopping" element={<AddTopping />} />
