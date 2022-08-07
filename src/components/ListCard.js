@@ -14,14 +14,16 @@ export default function ListCard(props) {
       <Row>
         {props.boba.map((items, index) => (
           <Col className="mt-4">
-            <Link to={`/Detail/${index}`} className="text-decoration-none">
+            <Link to={`/Detail/${index}`} className=" text-decoration-none">
               <Card
                 key={index}
+                className="pe-auto"
                 style={{
                   width: "15.063rem",
                   border: 0,
                   borderRadius: 10,
                   backgroundColor: "#F6DADA",
+
                 }}
               >
                 <Card.Img

@@ -9,6 +9,8 @@ export default function InputText(props) {
         placeholder={props.placeholder}
         name={props.name}
         id={props.id}
+        value={props.value}
+        onChange={props.onChange}
       />
     </div>
   );

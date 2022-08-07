@@ -4,9 +4,9 @@ import Header from '../components/Header'
 import HeroBanner from '../components/Hero-Banner'
 import List from '../components/ListCard'
 
-import DataBoba from '../API/ListMenu.json'
+// import {DataBoba from '../API/ListMenu.json'
 
-// import { DataBoba } from "../API/DummyAPI";
+import { DataBoba } from "../API/DummyAPI";
 
 export default function LandingPage() {
 
@@ -15,7 +15,7 @@ export default function LandingPage() {
         <div>
             <Header />
             <HeroBanner />
-            <List boba={DataBoba.listMenu} />
+            <List boba={DataBoba} />
         </div>
     )
 }

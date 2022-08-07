@@ -72,8 +72,8 @@ function Header() {
       })
     } else {
       dispatch({
-        type: 'LOGIN_ADMIN',
-        payload: data
+        type: 'LOGOUT',
+        payload: {}
       })
     }
   }
@@ -147,7 +147,7 @@ function Header() {
               className="px-4"
               onClick={handleShow}
             >
-              XXXXX
+              Login
             </Button>
             <Button variant="danger" className="px-4 ms-2" onClick={regShow}>
               Register
@@ -162,7 +162,7 @@ function Header() {
             <form onSubmit={handleOnSubmit}>
               <Modal.Body>
                 <InputText type="email" placeholder="Email" id="email" name="email" />
-                <InputText type="password" placeholder="Password" id="password" name="email" />
+                <InputText type="password" placeholder="Password" id="password" name="password" />
               </Modal.Body>
               <ButtonSubmit type="submit" text="LOGIN" />
             </form>
