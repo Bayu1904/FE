@@ -42,8 +42,8 @@ export default function ListCard(props) {
                   </p>
 
                 </Card.Body>
-              </Link>
-            </Card>
+              </Card>
+            </Link>
           </Col>
         ))}
       </Row>
