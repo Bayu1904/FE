@@ -15,8 +15,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Modal from "react-bootstrap/Modal";
 import InputText from "./inputForm/InputText";
 import ButtonSubmit from "./inputForm/Button";
-import Cup from '../assets/cup.png'
-import Topping from '../assets/topping.png'
+import Cup from "../assets/cup.png";
+import Topping from "../assets/topping.png";
 
 function Header() {
   let profilPict = <img src={Foto} alt="122" />;
@@ -28,7 +28,7 @@ function Header() {
   const regClose = () => setReg(false);
   const regShow = () => setReg(true);
 
-  const [state, dispatch] = useContext(UserContext)
+  const [state, dispatch] = useContext(UserContext);
 
   useEffect(() => {
     if (reg) {
@@ -44,39 +44,38 @@ function Header() {
 
   const handleLogOut = () => {
     dispatch({
-      type: 'LOGOUT',
-      payload: {}
-    })
-  }
+      type: "LOGOUT",
+      payload: {},
+    });
+  };
 
   const handleOnSubmit = (e) => {
-    e.preventDefault()
-    const email = document.getElementById('email').value
-    const password = document.getElementById('password').value
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
     const data = {
       email,
-      password
-    }
+      password,
+    };
 
     if (data.email === "admin@mail.com") {
       dispatch({
-        type: 'LOGIN_ADMIN',
-        payload: data
-      })
-
+        type: "LOGIN_ADMIN",
+        payload: data,
+      });
     } else if (data.email === "dandi@mail.com") {
       dispatch({
-        type: 'LOGIN_USER',
-        payload: data
-      })
+        type: "LOGIN_USER",
+        payload: data,
+      });
     } else {
       dispatch({
         type: 'LOGOUT',
         payload: {}
       })
     }
-  }
+  };
 
   return (
     <Navbar expand="lg">
@@ -95,7 +94,7 @@ function Header() {
           {state.isLogin ? (
             <>
               <Nav className="me-auto">
-                <Nav.Link href="/">
+                <Nav.Link href="/Cart">
                   <img src={Cart} alt="Logo" className="mt-3 me-2" />
                 </Nav.Link>
 
