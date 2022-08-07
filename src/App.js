@@ -35,7 +35,6 @@ function App() {
           <Route path="/" element={<AdminRoute />}>
             <Route path="/AddProduct" element={<AddProduct />} />
             <Route path="/AddTopping" element={<AddTopping />} />
-            {/* <Route path="/Income" element={<Income />} /> */}
           </Route>
         </Routes>
       </Router>

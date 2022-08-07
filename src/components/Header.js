@@ -71,9 +71,9 @@ function Header() {
       });
     } else {
       dispatch({
-        type: "LOGIN_ADMIN",
-        payload: data,
-      });
+        type: 'LOGOUT',
+        payload: {}
+      })
     }
   };
 
@@ -139,21 +139,19 @@ function Header() {
                 </NavDropdown>
               </Nav>
             </>
-          ) : (
-            <>
-              {" "}
-              <Button
-                variant="outline-danger"
-                className="px-4"
-                onClick={handleShow}
-              >
-                XXXXX
-              </Button>
-              <Button variant="danger" className="px-4 ms-2" onClick={regShow}>
-                Register
-              </Button>{" "}
-            </>
-          )}
+          ) : <>
+            {" "}
+            <Button
+              variant="outline-danger"
+              className="px-4"
+              onClick={handleShow}
+            >
+              Login
+            </Button>
+            <Button variant="danger" className="px-4 ms-2" onClick={regShow}>
+              Register
+            </Button>{" "}
+          </>}
 
           {/* ini Modal */}
           <Modal className="p-4" show={show} onHide={handleClose}>
@@ -162,18 +160,8 @@ function Header() {
             </h1>
             <form onSubmit={handleOnSubmit}>
               <Modal.Body>
-                <InputText
-                  type="email"
-                  placeholder="Email"
-                  id="email"
-                  name="email"
-                />
-                <InputText
-                  type="password"
-                  placeholder="Password"
-                  id="password"
-                  name="email"
-                />
+                <InputText type="email" placeholder="Email" id="email" name="email" />
+                <InputText type="password" placeholder="Password" id="password" name="password" />
               </Modal.Body>
               <ButtonSubmit type="submit" text="LOGIN" />
             </form>
