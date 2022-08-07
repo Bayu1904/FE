@@ -19,7 +19,7 @@ import ButtonSubmit from "./inputForm/Button";
 
 function Header() {
   let profilPict = <img src={Foto} alt="122" />;
-  let isLogin = true;
+  let isLogin = false;
   // let isAdmin = false;
   const [show, setShow] = useState(false);
   const [reg, setReg] = useState(false);
