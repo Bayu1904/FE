@@ -13,6 +13,7 @@ import Income from "./components/Income";
 import AdminRoute from "./utils/AdminRoute";
 import { UserContext } from "./utils/CreateContext";
 import Cart from "./pages/Cart";
+import UserRoute from "./utils/UserRoute";
 
 function App() {
   const [state] = useContext(UserContext);
@@ -29,12 +30,14 @@ function App() {
               isAdmin ? <Income /> : isLogin ? <LandingPage /> : <LandingPage />
             }
           />
-          <Route path="/Profile" element={<Profile />} />
-          <Route path="/Detail/:id" element={<Detail data={DataBoba} />} />
-          <Route path="/Cart" element={<Cart />} />
           <Route path="/" element={<AdminRoute />}>
             <Route path="/AddProduct" element={<AddProduct />} />
             <Route path="/AddTopping" element={<AddTopping />} />
+          </Route>
+          <Route path="/" element={<UserRoute />}>
+            <Route path="/Profile" element={<Profile />} />
+            <Route path="/Detail/:id" element={<Detail data={DataBoba} />} />
+            <Route path="/Cart" element={<Cart />} />
           </Route>
         </Routes>
       </Router>

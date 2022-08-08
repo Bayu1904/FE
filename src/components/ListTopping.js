@@ -23,7 +23,6 @@ export default function ListTopping(props) {
       }
       return sum;
     }, 0);
-    console.log(totalPrice);
     setTotal(totalPrice);
   };
 
