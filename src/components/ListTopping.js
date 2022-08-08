@@ -8,23 +8,21 @@ import "../assets/Topping/StyleToping.css";
 import ButtonSubmit from "../components/inputForm/Button";
 
 export default function ListTopping(props) {
-  const [checkedState, setCheckedState] = useState(
-    new Array(DataTopping.lenght).fill(false)
-  );
-  const [total, setTotal] = useState(0);
-  const handleOnChange = (position) => {
-    const updateCheckedState = checkedState.map((item, index) =>
-      index === position ? !item : item
-    );
-    setCheckedState(updateCheckedState);
-    const totalPrice = updateCheckedState.reduce((sum, currentState, index) => {
-      if (currentState === true) {
-        return sum + DataTopping[index].price;
-      }
-      return sum;
-    }, 0);
-    setTotal(totalPrice);
+  // topingHandler
+  const [toping, setToping] = useState([]);
+  const handleChange = (e) => {
+    let updateToping = [...toping];
+    if (e.target.checked) {
+      updateToping = [...toping, e.target.value];
+    } else {
+      updateToping.splice(toping.indexOf(e.target.value));
+    }
+    setToping(updateToping);
   };
+
+  let resultTotal = toping.reduce((a, b) => {
+    return a + parseInt(b);
+  }, 0);
 
   // function Add() {
   //   // console.log(id);
@@ -40,11 +38,12 @@ export default function ListTopping(props) {
           <Col md={3} className="text-center mb-3" key={index}>
             <input
               type="checkbox"
-              id={`id-${index}`}
-              onChange={() => handleOnChange(index)}
+              id={items.id}
+              onChange={handleChange}
               className="toppingCeckbox"
+              value={items.price}
             />
-            <label htmlFor={`id-${index}`}>
+            <label htmlFor={items.id}>
               <img
                 src={items.image}
                 alt="123"
@@ -62,7 +61,7 @@ export default function ListTopping(props) {
         </Col>
         <Col>
           <h4 className="text-end" style={{ color: "#974A4A" }}>
-            {formatPrice(props.ProductPrice + total)}
+            {formatPrice(resultTotal + props.ProductPrice)}
           </h4>
         </Col>
       </Row>
