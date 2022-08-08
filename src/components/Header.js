@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
 import { UserContext } from "../utils/CreateContext";
 import User from "../assets/user 2User.png";
@@ -71,41 +72,47 @@ function Header() {
       });
     } else {
       dispatch({
-        type: 'LOGOUT',
-        payload: {}
-      })
+        type: "LOGOUT",
+        payload: {},
+      });
     }
   };
 
   return (
     <Navbar expand="lg">
       <Container>
-        <Navbar.Brand href="/">
-          <img
-            src={LogoBrand}
-            width="50"
-            height="50"
-            className="d-inline-block align-top"
-            alt="logo brand"
-          />
+        <Navbar.Brand>
+          <Link to="/">
+            <img
+              src={LogoBrand}
+              width="50"
+              height="50"
+              className="d-inline-block align-top"
+              alt="logo brand"
+            />
+          </Link>
         </Navbar.Brand>
 
         <div className="d-flex">
           {state.isLogin ? (
             <>
               <Nav className="me-auto">
-                <Nav.Link href="/Cart">
+                <Link to="/Cart">
                   <img src={Cart} alt="Logo" className="mt-3 me-2" />
-                </Nav.Link>
-
+                </Link>
                 <NavDropdown
                   id="nav-dropdown-dark-example"
                   title={profilPict}
                   menuVariant="light"
                 >
-                  <NavDropdown.Item href="/Profile">
-                    <img src={User} alt="User" style={{ height: 30 }} />{" "}
-                    <span style={{ fontWeight: 600 }}>Profile</span>
+                  <NavDropdown.Item>
+                    <Link
+                      to="/Profile"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <img src={User} alt="User" style={{ height: 30 }} />{" "}
+                      <span style={{ fontWeight: 600 }}>Profile</span>
+                    </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={() => handleLogOut()} href="/">
@@ -123,13 +130,23 @@ function Header() {
                   title={profilPict}
                   menuVariant="light"
                 >
-                  <NavDropdown.Item href="/AddProduct">
-                    <img src={Cup} alt="User" style={{ height: 30 }} />{" "}
-                    <span style={{ fontWeight: 600 }}>Add Product</span>
+                  <NavDropdown.Item>
+                    <Link
+                      to="/AddProduct"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <img src={Cup} alt="User" style={{ height: 30 }} />{" "}
+                      <span style={{ fontWeight: 600 }}>Add Product</span>
+                    </Link>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/AddTopping">
-                    <img src={Topping} alt="User" style={{ height: 30 }} />{" "}
-                    <span style={{ fontWeight: 600 }}>Add Topping</span>
+                  <NavDropdown.Item>
+                    <Link
+                      to="/AddTopping"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <img src={Topping} alt="User" style={{ height: 30 }} />{" "}
+                      <span style={{ fontWeight: 600 }}>Add Topping</span>
+                    </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={() => handleLogOut()} href="/">
@@ -139,19 +156,21 @@ function Header() {
                 </NavDropdown>
               </Nav>
             </>
-          ) : <>
-            {" "}
-            <Button
-              variant="outline-danger"
-              className="px-4"
-              onClick={handleShow}
-            >
-              Login
-            </Button>
-            <Button variant="danger" className="px-4 ms-2" onClick={regShow}>
-              Register
-            </Button>{" "}
-          </>}
+          ) : (
+            <>
+              {" "}
+              <Button
+                variant="outline-danger"
+                className="px-4"
+                onClick={handleShow}
+              >
+                Login
+              </Button>
+              <Button variant="danger" className="px-4 ms-2" onClick={regShow}>
+                Register
+              </Button>{" "}
+            </>
+          )}
 
           {/* ini Modal */}
           <Modal className="p-4" show={show} onHide={handleClose}>
@@ -160,8 +179,18 @@ function Header() {
             </h1>
             <form onSubmit={handleOnSubmit}>
               <Modal.Body>
-                <InputText type="email" placeholder="Email" id="email" name="email" />
-                <InputText type="password" placeholder="Password" id="password" name="password" />
+                <InputText
+                  type="email"
+                  placeholder="Email"
+                  id="email"
+                  name="email"
+                />
+                <InputText
+                  type="password"
+                  placeholder="Password"
+                  id="password"
+                  name="password"
+                />
               </Modal.Body>
               <ButtonSubmit type="submit" text="LOGIN" />
             </form>

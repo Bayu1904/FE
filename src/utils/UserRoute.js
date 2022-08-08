@@ -11,7 +11,7 @@ const AdminRoute = ({ element: component, ...rest }) => {
 
   // console.log(`ini admin ${isAdmin}, dan  ini Login ${isLogin}`);
   const [state] = useContext(UserContext);
-  const isCekLogin = state.isAdmin;
+  const isCekLogin = state.isLogin;
 
   // const login = isCekLogin.map((item, index) => {
   //     console.log(item.isAdmin);
