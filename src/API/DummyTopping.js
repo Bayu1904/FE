@@ -12,7 +12,7 @@ export let DataTopping = [
     id: 0,
     name: "Bubble Tea Gelatin",
     image: topping1,
-    price: 3000,
+    price: 4000,
   },
   {
     id: 1,
